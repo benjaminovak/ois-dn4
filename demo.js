@@ -5,7 +5,7 @@ var queryUrl = baseUrl + '/query';
 var username = "ois.seminar";
 var password = "ois4fri";
 
-var id = {};
+var id = [0, 0, 0];
 var imena = ["Marko", "Manca", "Eva"];
 var priimki = ["Zatlacen", "Zagozen", "Povozen"];
 var datumRojstev = ["1964-03-10T08:08", "1987-03-04T12:12", "1994-19-01T11:11"];
@@ -72,7 +72,7 @@ function generator() {
 }
 
 function dodajMeritveVitalnihZnakov(ehrId, i, sessionId) {
-	
+	$("#dodajMeritveVitalnihZnakovSporocilo").html("<span class='obvestilo label label-danger fade-in'> '" + ehrId + "'!");
 	var datum = datumRojstev[i];
 	datum = datum.split("-");
 	var leto = datum[0];
@@ -107,7 +107,7 @@ function dodajMeritveVitalnihZnakov(ehrId, i, sessionId) {
 	
 		console.log("Do ajaxa");
 		$.ajaxSetup({
-		    headers: {"Ehr-Session": sessionId}
+		    headers: {	"Ehr-Session": sessionId	}
 		});
 		var podatki = {
 			// Preview Structure: https://rest.ehrscape.com/rest/v1/template/Vital%20Signs/example
@@ -134,6 +134,10 @@ function dodajMeritveVitalnihZnakov(ehrId, i, sessionId) {
 		    type: 'POST',
 		    contentType: 'application/json',
 		    data: JSON.stringify(podatki),
+		    success: function (res) {
+		    	console.log(res.meta.href);
+		        $("#dodajMeritveVitalnihZnakovSporocilo").html("<span class='obvestilo label label-success fade-in'>" + res.meta.href + ".</span>");
+		    },
 		    error: function(err) {
 		    	$("#dodajMeritveVitalnihZnakovSporocilo").html("<span class='obvestilo label label-danger fade-in'>Napaka '" + JSON.parse(err.responseText).userMessage + "'!");
 				console.log(JSON.parse(err.responseText).userMessage);
