@@ -72,7 +72,7 @@ function generator() {
 }
 
 function dodajMeritveVitalnihZnakov(ehrId, i, sessionId) {
-	$("#dodajMeritveVitalnihZnakovSporocilo").html("<span class='obvestilo label label-danger fade-in'> '" + ehrId + "'!");
+	console.log("EhrId" + ehrId);
 	var datum = datumRojstev[i];
 	datum = datum.split("-");
 	var leto = datum[0];
@@ -123,7 +123,7 @@ function dodajMeritveVitalnihZnakov(ehrId, i, sessionId) {
 		    "vital_signs/indirect_oximetry:0/spo2|numerator": nasicenostKrviSKisikom
 		};
 		console.log(podatki);
-		var parametriZahteve = {
+		/*var parametriZahteve = {
 		    "ehrId": ehrId,
 		    templateId: 'Vital Signs',
 		    format: 'FLAT',
@@ -142,7 +142,7 @@ function dodajMeritveVitalnihZnakov(ehrId, i, sessionId) {
 		    	$("#dodajMeritveVitalnihZnakovSporocilo").html("<span class='obvestilo label label-danger fade-in'>Napaka '" + JSON.parse(err.responseText).userMessage + "'!");
 				console.log(JSON.parse(err.responseText).userMessage);
 		    }
-		});
+		});*/
 		console.log("Vse vredu.");
 	}
 }
