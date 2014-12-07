@@ -53,6 +53,13 @@ function generator() {
 		            type: 'POST',
 		            contentType: 'application/json',
 		            data: JSON.stringify(partyData),
+		            success: function (party) {
+		                if (party.action == 'CREATE') {
+		                    $("#kreirajSporocilo").html("<span class='obvestilo label label-success fade-in'>Uspešno kreiran EHR '" + ehrId + "'.</span>");
+		                    console.log("Uspešno kreiran EHR '" + ehrId + "'.");
+		                    $("#preberiEHRid").val(ehrId);
+		                }
+		            },
 		            error: function(err) {
 		            	$("#kreirajSporocilo").html("<span class='obvestilo label label-danger fade-in'>Napaka '" + JSON.parse(err.responseText).userMessage + "'!");
 		            	console.log(JSON.parse(err.responseText).userMessage);
@@ -60,11 +67,11 @@ function generator() {
 		        });
 		    }
 		});
-		dodajMeritveVitalnihZnakov(ehrId, i);
+		dodajMeritveVitalnihZnakov(ehrId, i, sessionId);
 	}	
 }
 
-function dodajMeritveVitalnihZnakov(ehrId, i) {
+function dodajMeritveVitalnihZnakov(ehrId, i, sessionId) {
 	
 	var datum = datumRojstev[i];
 	datum = datum.split("-");
@@ -75,7 +82,7 @@ function dodajMeritveVitalnihZnakov(ehrId, i) {
 	var visina = Math.floor((Math.random() * 50) + 150);
 	var teza = Math.floor((Math.random() * 50) + 50);
 	
-	for(var j = 13; j < dolzina; j++){
+	for(var j = 0; j < 1; j++){
 		datum = datum.split("-");
 		datum[0] = datum[0] + i;
 		datum = datum.join("-");
@@ -96,9 +103,9 @@ function dodajMeritveVitalnihZnakov(ehrId, i) {
 		var sistolicniKrvniTlak =  Math.floor(120 + (Math.pow((-1), plus) * Math.random() * 50));
 		var diastolicniKrvniTlak = Math.floor(80 + (Math.pow((-1), plus) * Math.random() * 30));
 		var nasicenostKrviSKisikom = Math.floor(100 - verjetnostDaSeZredi[i] * (Math.random() * 20));
-		var merilec = "Benjamin Novak";
+		var merilec = 'Benjamin Novak';
 	
-
+		console.log("Do ajaxa");
 		$.ajaxSetup({
 		    headers: {"Ehr-Session": sessionId}
 		});
@@ -115,6 +122,7 @@ function dodajMeritveVitalnihZnakov(ehrId, i) {
 		    "vital_signs/blood_pressure/any_event/diastolic": diastolicniKrvniTlak,
 		    "vital_signs/indirect_oximetry:0/spo2|numerator": nasicenostKrviSKisikom
 		};
+		console.log(podatki);
 		var parametriZahteve = {
 		    "ehrId": ehrId,
 		    templateId: 'Vital Signs',
@@ -131,6 +139,7 @@ function dodajMeritveVitalnihZnakov(ehrId, i) {
 				console.log(JSON.parse(err.responseText).userMessage);
 		    }
 		});
+		console.log("Vse vredu.");
 	}
 }
 
