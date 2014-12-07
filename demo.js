@@ -31,6 +31,8 @@ function generator() {
 		var priimek = priimki[i];
 		var datumRojstva = datumRojstev[i];
 		var ehrId;
+		var predloga = "<option value=\""+ ime + " "+ priimek  + " "+ datumRojstva +"\">" + ime + " "+ priimek + "</option>"
+		$("#predlogaBolnika").html(predloga);
 		$.ajaxSetup({
 		    headers: {"Ehr-Session": sessionId}
 		});
