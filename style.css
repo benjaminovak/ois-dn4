@@ -1,0 +1,110 @@
+body {padding: 10px;}
+p{font-family: 'Open Sans';}
+.obvestilo {margin-left:30px;}
+.p1{ margin-top: 5px;}
+.p2{ font-size: 20px; color: #A4A4A4; font-weight: 300;} 
+.p3{ font-size: 14px; color: #A4A4A4; font-weight: 300;}
+.p4{ font-size: 30px; color: #424242;  margin-top: -30px; font-weight: bold;}
+.p5{ font-size: 24px; color: #337ab7; font-weight: bold;} 
+.d1{ border: 2px solid white; border-radius: 20px;}
+.slikaVelikost {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	width: 150px;
+}
+#visina{
+	height: 300px;
+}
+.besedilo{
+	position: absolute;
+	top: 98px;
+	left: 148px;
+	height: 300px;
+}
+#d2{
+	border-style: none none none solid;
+	border-color: #A4A4A4;
+}
+#masa{
+	border-style: solid;
+	border-color: #D8D8D8;
+	border-width: 1px;
+	border-radius: 8px;
+	border-radius: 8px;
+	padding: 15px;
+	margin: 20px 15px 20px 70px;
+}
+#masa:hover {
+    border-color: #337ab7;
+    border-width: 2px;
+	border-radius: 8px;
+}
+#temperatura{
+	border-style: solid;
+	border-color: #D8D8D8;
+	border-width: 1px;
+	border-radius: 8px;
+	padding: 15px;
+	margin: 20px 15px;
+}#temperatura:hover {
+    border-color: #337ab7;
+    border-width: 2px;
+	border-radius: 8px;
+}
+#nasicenost{
+	border-style: solid;
+	border-color: #D8D8D8;
+	border-width: 1px;
+	border-radius: 8px;
+	padding: 15px;
+	margin: 20px 15px;
+}#nasicenost:hover {
+    border-color: #337ab7;
+    border-width: 2px;
+	border-radius: 8px;
+}
+#systolic{
+	border-style: solid;
+	border-color: #D8D8D8;
+	border-width: 1px;
+	border-radius: 8px;
+	padding: 15px;
+	margin: 20px 15px 20px 70px;
+}
+#systolic:hover {
+    border-color: #337ab7;
+    border-width: 2px;
+	border-radius: 8px;
+}
+#diastolic{
+	border-style: solid;
+	border-color: #D8D8D8;
+	border-width: 1px;
+	border-radius: 8px;
+	padding: 15px;
+	margin: 20px 15px;
+}#diastolic:hover {
+    border-color: #337ab7;
+    border-width: 2px;
+}
+#index{
+	border-style: solid;
+	border-color: #D8D8D8;
+	border-width: 1px;
+	border-radius: 8px;
+	padding: 15px;
+	margin: 20px 15px;
+}
+#index:hover {
+    border-color: #337ab7;
+    border-width: 2px;
+}
+
+
+/*#podatki{
+	border-style: solid;
+	border-color: #F2F2F2;
+	border-width: 3px;
+	border-radius: 25px;
+}*/

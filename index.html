@@ -8,29 +8,69 @@
 	    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
 	    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 	    <script src="demo.js"></script>
-	    <style>
-	  		body {padding: 10px;}
-	  		.btn {margin-top: 30px;}
-	  		.obvestilo {margin-left:30px;}
-	  	</style>
+	    <link rel="stylesheet" type="text/css" href="style.css" />
 	</head>
 	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12">
+					<center>
+					      <button type="button" class="btn btn-primary btn-lg btn-block" onclick="generator()">Generiraj bolnike</button><span id="generator"></span>
+					</center>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<div class="row">
+								<div class="col-lg-4 col-md-4 col-sm-4"><p class="p1">Izberi od katere osebe želiš videti računalniški karton.</p></div>
+								<div class="col-lg-2 col-md-2 col-sm-2"><select class="form-control input-sm" id="predlogaBolnika"><option value=""></option></select></div>
+								<div class="col-lg-2 col-md-2 col-sm-2">
+									<button type="button" class="btn btn-primary btn-block" onclick="prikaz()">Prikaži</button><span id="generator"></span>
+								</div>
+							</div>
+						</div>
+						<div class="panel-body">
+							<div class="container-fluid">
+							  <div class="row-fluid">
+							    <div class="span10">
+							 		<div class="col-lg-12 col-md-12 col-sm-12" class="d1">
+							 			<div class="col-lg-3 col-md-3 col-sm-3" class="d1" id="slika"></div>
+							 			<div class="col-lg-9 col-md-9 col-sm-9" class="d1" id="podatki"></div>
+							 		</div>
+							    </div>
+							    <div class="span2">
+									<div class="col-lg-12 col-md-12 col-sm-12"></div>
+							    </div>
+							  </div>
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
 		<div class="row">
 			<div class="col-lg-12 col-md-12 col-sm-12">
 				<div class="panel panel-default">
-					<div class="panel-heading">
-						<div class="row">
-							<button type="button" class="btn btn-primary btn-xs" onclick="generator()">Generiraj bolnike</button><span id="kreirajSporocilo"></span>
-							<div class="col-lg-5 col-md-5 col-sm-5"><b>Preglej karton bolnika</b></div>
-							<div class="col-lg-4 col-md-4 col-sm-4"><select class="form-control input-sm" id="predlogaBolnika"><option value=""></option></select></div>
+					<div class="panel-body">
+						<div class="container-fluid">
+							<div class="row-fluid">
+						 		<div class="col-lg-3 col-md-3 col-sm-3" id="visina">
+						 			
+						 		</div>
+								<div class="col-lg-9 col-md-9 col-sm-9">
+									<div id="masa" class="col-lg-3 col-md-3 col-sm-3"></div>
+									<div id="temperatura" class="col-lg-3 col-md-3 col-sm-3"></div>
+									<div id="nasicenost" class="col-lg-3 col-md-3 col-sm-3"></div>
+								</div>
+								<div class="col-lg-9 col-md-9 col-sm-9">
+									<div id="systolic" class="col-lg-3 col-md-3 col-sm-3"></div>
+									<div id="diastolic" class="col-lg-3 col-md-3 col-sm-3"></div>
+									<div id="index" class="col-lg-3 col-md-3 col-sm-3"></div>
+								</div>
+							</div>
 						</div>
 					</div>
-					<div class="panel-body">
-						<span class="label label-default">Ime</span><input id="kreirajIme" type="text" class="form-control input-mini" placeholder="Osama">
-						<span class="label label-default">Priimek</span><input id="kreirajPriimek" type="text" class="form-control" placeholder="Bin Laden">
-						<span class="label label-default">Datum rojstva</span><input id="kreirajDatumRojstva" type="text" class="form-control" placeholder="1957-03-10T09:08">
-						<button type="button" class="btn btn-primary btn-xs" onclick="kreirajEHRzaBolnika()">Dodaj osnovne podatke o bolniku</button><span id="kreirajSporocilo"></span>
-				  	</div>
 				</div>
 			</div>
 		</div>
