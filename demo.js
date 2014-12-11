@@ -86,7 +86,6 @@ function dodajMeritveVitalnihZnakov(i) {
 	console.log("EhrId: " + id[i]);
 	console.log("Ni ehrja! i = ", i);
 	if ( id[i] !== 0){
-		
 		var datum = datumRojstev[i];
 		datum = datum.split("-");
 		var leto = datum[0];
@@ -618,12 +617,12 @@ function analizaInPredlogi(index, ehrId){
 	var sporocilo = "<p class=\"p7\">"; 
 	nasveti([
 			{
-				"ok": "Vaša nasičenost krvi s kisikom ima normalno vrednost. Nadaljujte z dobrimi navadami in poskušajte odpraviti slabe.",
-				"slabo": "Vaša nasičenost je pod nivojem normalne vrednost. To se zgodi ob različnih dihalnih stiskah, na primer pri astmi, pljučnici ali pa preprosto pri slabotnih bolnikih, ki ne morejo dobro dihati. Preverite, če ne spadate v katero izmed naštetih skupin. ",
+				"ok": "Nasičenost vaše krvi s kisikom je v intervalu normalne vrednosti. Nadaljujte z dobrimi navadami in poskušajte odpraviti slabe.",
+				"slabo": "Vaša nasičenost je pod nivojem normalne vrednosti. Do tega pride ob različnih dihalnih stiskah, na primer pri astmi, pljučnici ali pa preprosto pri slabotnih bolnikih, ki ne morejo dovolj globoko vdihniti. Preverite, če spadate v katero izmed naštetih skupin. ",
 			},
 			{
-				"ok": "<br>Vaš tlak je normalen. Če na vsa spodnja vprašanja odgovorite z ne, nadaljujte z svojim življenskim slogom. <br>" + " <b> 1. Ali ste pretežki?	2. Ali jeste preslano hrano?	3. Ali popijete preveč alkoholnih pijač?	4. Ali se premalo gibljete?	5. Ali kadite?</b>",
-				"slabo": "Če se bolnik ob nizkem krvnem tlaku dobro počuti, ni razloga za zaskrbljenost. Zdravnika je potrebno opozoriti le v primeru, ko nizek krvni tlak povzroča težave, kot so vrtoglavica, splošna oslabelost, zaspanost in utrujenost. <br> Tveganje za nastanek in razvoj arterijske hipertenzije ter posledičnih bolezni srca in žilja lahko uspešno zmanjšamo s slogom življenja, ki mu pravimo zdrav način življenja. Z zdravim načinom življenja ne preprečimo le nastanka arterijske hipertenzije, ampak lahko povečan krvni tlak uspešno zmanjšamo. \n"
+				"ok": "<br>Vaš tlak je normalen. Odgovorite na sledeča vprašanja in če ste nanje odgovorili z ne, nadaljujte s svojim življenjskim slogom. <br>" + " <b> 1. Ali ste pretežki?	2. Ali jeste preslano hrano?	3. Ali popijete preveč alkoholnih pijač?	4. Ali se premalo gibljete?	5. Ali kadite?</b>",
+				"slabo": "Če se bolnik kljub nizkemu krvnemu tlaku dobro počuti, ni razloga za zaskrbljenost. Zdravnika je potrebno opozoriti le v primeru, ko nizek krvni tlak povzroča težave, kot so vrtoglavica, splošna oslabelost, zaspanost in utrujenost. <br> Tveganje za nastanek in razvoj arterijske hipertenzije ter posledičnih bolezni srca in žilja lahko uspešno zmanjšamo z zdravim načinom življenja. S tem ne preprečimo le nastanka arterijske hipertenzije, pripomoremo lahko tudi k zmanjšanju povečanega krvnega tlak. <br>"
 				+ "<br>Odgovorite si: <b> 1. Ali ste pretežki?	2. Ali jeste preslano hrano?	3. Ali popijete preveč alkoholnih pijač?	4. Ali se premalo gibljete?	5. Ali kadite?</b>",
 			},
 		]);
@@ -635,8 +634,8 @@ function analizaInPredlogi(index, ehrId){
 			else	sporocilo += n[i].slabo; 
 		}
 	}
-	var itmTezave =	["<br>Zdravlje je pomembnejše od izgleda. Hrana je vir hranil in posamezniku zagotavlja ustrezen vnos energije in posameznih hranil. Povzroča tveganje zdravja kot so infekcije dihal, poškodbo ledvic, srčno kap, krvavenje in nenazadnje tudi smrt. Priporočamo <b>povečano količina dnevnega vnosa hrane</b>.", "<br>Debelost povečuje verjetnost raznih bolezni, zlasti bolezni srca, sladkorne bolezni tipa 2, obstruktivne apneje med spanjem, nekaterih vrst raka in osteoartritisa. Debelost je najpogosteje posledica kombinacije pomanjkanja telesne dejavnosti, prevelike količine užite hrane in genetske dovzetnosti(lahko tudi genetske in endokrine motnje, zdravila ali duševne motnje). <br> Priporočamo <b>izboljšanje</b> kakovosti prehrane, <b>dieto</b> in <b>povečanje športnih aktivnost</b>."];	//http://sl.wikipedia.org/wiki/Debelost
-	if(tezave[3] !== 0){
+	var itmTezave =	["<br>Zdravje je pomembnejše od videza. Hrana je vir hranil in posamezniku zagotavlja ustrezen vnos energije. Podhranjenost lahko vodi do mnogih drugih zdravstvenih težav, kot so infekcije dihal, poškodba ledvic, srčna kap, krvavenje in nenazadnje smrt. Priporočamo <b>povečano količina dnevnega vnosa hrane</b>.", "<br>Ljudje s prekomerno telesno težo se velikokrat soočajo z boleznimi srca, sladkorno boleznijo tipa 2, obstruktivnimi apnejami med spanjem, nekaterimi vrstami raka in osteoartritisom. Debelost je najpogosteje posledica kombinacije pomanjkanja telesne dejavnosti, prevelike količine zaužite hrane in genetske dovzetnosti (lahko tudi zaradi genetske in endokrine motnje, zdravil ali duševne motnje). <br> Priporočamo <b>izboljšanje</b> kakovosti prehrane, <b>dieto</b> in <b>povečanje športnih aktivnost</b>."];	//http://sl.wikipedia.org/wiki/Debelost
+	if(tezave[3] != 0){
 		if(tezave[3] === 1){
 			sporocilo += itmTezave[0];
 		}
