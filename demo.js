@@ -168,31 +168,28 @@ function dodajMeritveVitalnihZnakov(i) {
 	}
 }
 
+function prikaziPrekoEhrId(){
+	dodaj();
+	zbrisi();
+	var ehrId = $("#meritveVitalnihZnakovEHRid").val();
+	console.log(ehrId);
+	prikaz(ehrId);
+}
+
 function prikazi() {
 	dodaj();
-    prikaz();
-}
-
-function dodaj(){
-	$("#podatek").fadeIn(1000);
-	$("#a").fadeIn(1000);
-	$("#predlog").fadeIn(1000);
-}
-
-function odstrani(){
-	$("#podatek").fadeOut(1000);
-	$("#a").fadeOut(1000);
-	$("#predlog").fadeOut(1000);
-}
-
-function prikaz(){
-	sessionId = getSessionId();	
 
 	var e = document.getElementById("predlogaBolnika");
 	var ehrId = e.options[e.selectedIndex].value;
 	console.log(typeof ehtId);
 	console.log(ehrId);
 
+	zbrisi();
+
+    prikaz(ehrId);
+}
+
+function zbrisi(){
 	var myNode = document.getElementById("slika");
 	myNode.innerHTML = '';
 	myNode = document.getElementById("podatki");
@@ -217,6 +214,22 @@ function prikaz(){
 	myNode.innerHTML = '';
 	myNode = document.getElementById("rezultati");
 	myNode.innerHTML = '';
+}
+
+function dodaj(){
+	$("#podatek").fadeIn(1000);
+	$("#a").fadeIn(1000);
+	$("#predlog").fadeIn(1000);
+}
+
+function odstrani(){
+	$("#podatek").fadeOut(1000);
+	$("#a").fadeOut(1000);
+	$("#predlog").fadeOut(1000);
+}
+
+function prikaz(ehrId){
+	sessionId = getSessionId();	
 
 	for(var i = 0; i < tezave.length; i++){
 		tezave[i] = 0;
@@ -257,7 +270,10 @@ function prikaz(){
 			$("#podatki").append(predloga);
 			var predloga = "<p class=\"p3\"><b>Naslov: </b><span class=\"p8\"> - </span></p>"
 			$("#podatki").append(predloga);
-    }
+		},
+		error: function(err) {
+			return;
+		}
 	});
 	$.ajax({
 	    url: baseUrl + "/view/" + ehrId + "/weight",
@@ -614,7 +630,7 @@ function analizaInPredlogi(index, ehrId){
 					.attr("fill", "none");
 		}
 	});
-var sporocilo = "<p class=\"p7\">"; 
+	var sporocilo = "<p class=\"p7\">"; 
 	nasveti([
 			{
 				"ok": "Nasičenost vaše krvi s kisikom je v intervalu normalne vrednosti. Nadaljujte z dobrimi navadami in poskušajte odpraviti slabe.",
