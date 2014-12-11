@@ -614,7 +614,7 @@ function analizaInPredlogi(index, ehrId){
 					.attr("fill", "none");
 		}
 	});
-	var sporocilo = "<p class=\"p7\">"; 
+var sporocilo = "<p class=\"p7\">"; 
 	nasveti([
 			{
 				"ok": "Nasičenost vaše krvi s kisikom je v intervalu normalne vrednosti. Nadaljujte z dobrimi navadami in poskušajte odpraviti slabe.",
@@ -622,7 +622,7 @@ function analizaInPredlogi(index, ehrId){
 			},
 			{
 				"ok": "<br>Vaš tlak je normalen. Odgovorite na sledeča vprašanja in če ste nanje odgovorili z ne, nadaljujte s svojim življenjskim slogom. <br>" + " <b> 1. Ali ste pretežki?	2. Ali jeste preslano hrano?	3. Ali popijete preveč alkoholnih pijač?	4. Ali se premalo gibljete?	5. Ali kadite?</b>",
-				"slabo": "Če se bolnik kljub nizkemu krvnemu tlaku dobro počuti, ni razloga za zaskrbljenost. Zdravnika je potrebno opozoriti le v primeru, ko nizek krvni tlak povzroča težave, kot so vrtoglavica, splošna oslabelost, zaspanost in utrujenost. <br> Tveganje za nastanek in razvoj arterijske hipertenzije ter posledičnih bolezni srca in žilja lahko uspešno zmanjšamo z zdravim načinom življenja. S tem ne preprečimo le nastanka arterijske hipertenzije, pripomoremo lahko tudi k zmanjšanju povečanega krvnega tlak. <br>"
+				"slabo": "<br>Če se bolnik kljub nizkemu krvnemu tlaku dobro počuti, ni razloga za zaskrbljenost. Zdravnika je potrebno opozoriti le v primeru, ko nizek krvni tlak povzroča težave, kot so vrtoglavica, splošna oslabelost, zaspanost in utrujenost. <br> Tveganje za nastanek in razvoj arterijske hipertenzije ter posledičnih bolezni srca in žilja lahko uspešno zmanjšamo z zdravim načinom življenja. S tem ne preprečimo le nastanka arterijske hipertenzije, pripomoremo lahko tudi k zmanjšanju povečanega krvnega tlak. <br>"
 				+ "<br>Odgovorite si: <b> 1. Ali ste pretežki?	2. Ali jeste preslano hrano?	3. Ali popijete preveč alkoholnih pijač?	4. Ali se premalo gibljete?	5. Ali kadite?</b>",
 			},
 		]);
