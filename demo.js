@@ -651,7 +651,7 @@ function analizaInPredlogi(index, ehrId){
 		}
 	}
 	var itmTezave =	["<br>Zdravje je pomembnejše od videza. Hrana je vir hranil in posamezniku zagotavlja ustrezen vnos energije. Podhranjenost lahko vodi do mnogih drugih zdravstvenih težav, kot so infekcije dihal, poškodba ledvic, srčna kap, krvavenje in nenazadnje smrt. Priporočamo <b>povečano količina dnevnega vnosa hrane</b>.", "<br>Ljudje s prekomerno telesno težo se velikokrat soočajo z boleznimi srca, sladkorno boleznijo tipa 2, obstruktivnimi apnejami med spanjem, nekaterimi vrstami raka in osteoartritisom. Debelost je najpogosteje posledica kombinacije pomanjkanja telesne dejavnosti, prevelike količine zaužite hrane in genetske dovzetnosti (lahko tudi zaradi genetske in endokrine motnje, zdravil ali duševne motnje). <br> Priporočamo <b>izboljšanje</b> kakovosti prehrane, <b>dieto</b> in <b>povečanje športnih aktivnost</b>."];	//http://sl.wikipedia.org/wiki/Debelost
-	if(tezave[3] != 0){
+	if(tezave[3] !== 0){
 		if(tezave[3] === 1){
 			sporocilo += itmTezave[0];
 		}
